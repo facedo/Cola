@@ -1,0 +1,36 @@
+
+<p id="notice"><%= notice %></p>
+
+<h1>Registro de turno en Colas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Numero</th>
+      <th>Nombre</th>
+      <th>Siglas</th>
+      <th>Ult num</th>
+      <th>Fe ult num</th>
+      <th>En cola</th>
+      <th colspan="1"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @filas.each do |fila| %>
+      <tr>
+        <td><%= fila.numero %></td>
+        <td><%= fila.nombre %></td>
+        <td><%= fila.siglas %></td>
+        <td><%= fila.ult_num %></td>
+        <td><%= l(fila.fe_ult_num) if fila.fe_ult_num.present? %></td>
+        <td><%= fila.fila_puestos.where(fecha: Date.today).count %></td>
+        <!-- <td><%= link_to 'Show', fila %></td> -->
+        <!-- <td><%= link_to 'Edit', edit_fila_path(fila) %></td> -->
+        <td><%= link_to 'Registrar', registro_registrar_path %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+<%= link_to 'New Fila Puesto', registro_new_path %> 

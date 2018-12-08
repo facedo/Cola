@@ -1,0 +1,40 @@
+html, body {
+	margin: 0px;
+}
+a,a:visited{
+	color:inherit;
+	text-decoration: none;
+}
+.menu1{
+	color: white;
+	background-color: darkblue;
+	ul {
+    	list-style-type: none;
+    	margin: 0;
+    	padding: 0;
+    	overflow: hidden;
+  	}
+  li {
+  		float: left;
+  	}
+  a {
+  		display: block;
+  		color: white;
+  		text-align: center;
+  		padding: 14px 16px;
+  		text-decoration: none;
+  		font-size: 110%;
+  	}
+  .modulo {
+      display: block;
+      color: white;
+      background-color: blue;
+      text-align: center;
+      padding: 14px 6px;
+      text-decoration: none;
+      font-size: 150%;
+      }
+  a:hover {
+  		background-color: #111;
+  	}
+}

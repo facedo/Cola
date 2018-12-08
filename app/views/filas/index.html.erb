@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Colas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Numero</th>
+      <th>Nombre</th>
+      <th>Siglas</th>
+      <th>Max avisos</th>
+      <th>Ult num</th>
+      <th>Fe ult num</th>
+      <th>En cola</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @filas.each do |fila| %>
+      <tr>
+        <td><%= fila.numero %></td>
+        <td><%= fila.nombre %></td>
+        <td><%= fila.siglas %></td>
+        <td><%= fila.max_avisos %></td>
+        <td><%= fila.ult_num %></td>
+        <td><%= l(fila.fe_ult_num) if fila.fe_ult_num.present? %></td>
+        <td><%= fila.fila_puestos_count %></td>
+        <td><%= link_to 'Show', fila %></td>
+        <td><%= link_to 'Edit', edit_fila_path(fila) %></td>
+        <td><%= link_to 'Destroy', fila, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nueva Cola', new_fila_path %>

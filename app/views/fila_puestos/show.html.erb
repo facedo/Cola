@@ -1,0 +1,53 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Fecha:</strong>
+  <%= @fila_puesto.fecha %>
+</p>
+
+<p>
+  <strong>Hora:</strong>
+  <%= @fila_puesto.hora %>
+</p>
+
+<p>
+  <strong>Fila:</strong>
+  <%= @fila_puesto.fila.nombre %>
+</p>
+
+<p>
+  <strong>Puesto:</strong>
+  <% if @fila_puesto.puesto.nil? then %>
+  <%=  "No asignado" %>
+  <% else %>
+  <%=  @fila_puesto.puesto.nombre %>
+  <% end %>
+</p>
+
+<p>
+  <strong>Numero:</strong>
+  <%= @fila_puesto.numero %>
+</p>
+
+<p>
+  <strong>Documento:</strong>
+  <%= @fila_puesto.documento %>
+</p>
+
+<p>
+  <strong>Estado:</strong>
+  <%= @fila_puesto.estado %>
+</p>
+
+<p>
+  <strong>Hora estado:</strong>
+  <%= @fila_puesto.hora_estado %>
+</p>
+
+<p>
+  <strong>Avisos:</strong>
+  <%= @fila_puesto.avisos %>
+</p>
+
+<%= link_to 'Edit', edit_fila_puesto_path(@fila_puesto) %> |
+<%= link_to 'Back', fila_puestos_path %>

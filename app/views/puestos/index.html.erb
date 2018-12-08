@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Puestos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Rotulo</th>
+      <th>Fila</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @puestos.each do |puesto| %>
+      <tr>
+        <td><%= puesto.nombre %></td>
+        <td><%= puesto.rotulo %></td>
+        <td><%= puesto.fila.siglas %></td>
+        <td><%= link_to 'Show', puesto %></td>
+        <td><%= link_to 'Edit', edit_puesto_path(puesto) %></td>
+        <td><%= link_to 'Destroy', puesto, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Puesto', new_puesto_path %>

@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Numero:</strong>
+  <%= @fila.numero %>
+</p>
+<p>
+  <strong>Nombre:</strong>
+  <%= @fila.nombre %>
+</p>
+<p>
+  <strong>Siglas:</strong>
+  <%= @fila.siglas %>
+</p>
+<p>
+  <strong>Max avisos:</strong>
+  <%= @fila.max_avisos %>
+</p>
+<p>
+  <strong>Ult num:</strong>
+  <%= @fila.ult_num %>
+</p>
+<p>
+  <strong>Fe ult num:</strong>
+  <%= @fila.fe_ult_num %>
+</p>
+
+<%= link_to 'Edit', edit_fila_path(@fila) %> |
+<%= link_to 'Back', filas_path %>
+</div>

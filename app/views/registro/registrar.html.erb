@@ -1,0 +1,16 @@
+<h1>Registro en Cola</h1>
+
+<%= form_tag({controller: "registro", action: "registrar"}, method: "get", class: "nifty_form") do |form| %>
+  <div class="field">
+    <%= form.label_tag :cola %>
+    <%= form.collection_select_tag(:fila_id, Fila.all, :id, :nombre) %>
+  </div>
+  <div class="field">
+    <%= form.label_tag :documento %>
+    <%= form.number_field_tag :documento %>
+  </div>
+  <div class="actions">
+    <%= form.submit_tag %>
+  </div>
+<% end %>
+

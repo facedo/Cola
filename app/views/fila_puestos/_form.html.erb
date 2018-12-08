@@ -1,0 +1,51 @@
+<%= form_with(model: fila_puesto, local: true) do |form| %>
+  <% if fila_puesto.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(fila_puesto.errors.count, "error") %> prohibited this fila_puesto from being saved:</h2>
+      <ul>
+      <% fila_puesto.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= form.label :fecha %>
+    <%= form.date_field :fecha,options={disabled:true} %>
+  </div>
+  <div class="field">
+    <%= form.label :hora %>
+    <%= form.time_field :hora,options={disabled:true} %>
+  </div>
+  <div class="field">
+    <%= form.label :fila_id %>
+    <%= form.collection_select(:fila_id, Fila.all, :id, :nombre) %>
+  </div>
+  <div class="field">
+    <%= form.label :puesto_id %>
+    <%= form.collection_select(:puesto_id, Puesto.all, :id, :nombre, include_blank: true) %>
+  </div>
+  <div class="field">
+    <%= form.label :numero %>
+    <%= form.number_field :numero %>
+  </div>
+  <div class="field">
+    <%= form.label :documento %>
+    <%= form.number_field :documento %>
+  </div>
+  <div class="field">
+    <%= form.label :estado %>
+    <%= form.text_field :estado,options={disabled:true} %>
+  </div>
+  <div class="field">
+    <%= form.label :hora_estado %>
+    <%= form.time_field :hora_estado,options={disabled:true} %>
+  </div>
+  <div class="field">
+    <%= form.label :avisos %>
+    <%= form.number_field :avisos,options={disabled:true} %>
+  </div>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

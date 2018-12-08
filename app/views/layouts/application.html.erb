@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cola</title>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <header>
+      <nav class="menu1">
+        <ul>
+          <li class="modulo">
+            <%= $nom_mod ||= "Inicio" %>
+          </li>
+          <li class="col-md">
+            <%= link_to 'Inicio', root_path %>
+          </li>
+          <li class="col-md">
+            <%= link_to 'Colas', filas_path %> 
+          </li>
+          <li class="col-md">
+            <%= link_to 'Puestos', puestos_path %> 
+          </li>
+          <li class="col-md">
+            <%= link_to "Personas en cola", fila_puestos_path %> 
+          </li>
+          <li class="col-md">
+            <%= link_to "Registro", registro_index_path %> 
+          </li>
+          <li class="col-md">
+            <%= link_to 'Monitor', monitor_index_path %> 
+          </li>
+          <li class="col-md">
+            <%= link_to 'Configurar', configurar_index_path %> 
+          </li>
+          <li class="col-md">
+            <%= link_to 'Salir', salir_index_path %> 
+          </li>
+        </ul>
+      </nav>
+    </header>
+      <%= yield %>
+  </body>
+</html>

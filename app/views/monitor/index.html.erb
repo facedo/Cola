@@ -1,0 +1,40 @@
+
+<h1>Personas en Espera</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Fecha</th>
+      <th>Hora</th>
+      <th>Fila</th>
+      <th>Puesto</th>
+      <th>Numero</th>
+      <th>Documento</th>
+      <th>Estado</th>
+      <th>Hora estado</th>
+      <th>Avisos</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @fila_puestos.each do |fila_puesto| %>
+      <tr>
+        <td><%= l(fila_puesto.fecha) %></td>
+        <td><%= l(fila_puesto.hora) %></td>
+        <td><%= fila_puesto.fila.nombre %></td>
+        <td><% if fila_puesto.puesto.nil? then %>
+            <%=  "No asignado" %>
+            <% else %>
+            <%=  fila_puesto.puesto.nombre %>
+            <% end %> </td>
+        <td><%= fila_puesto.numero %></td>
+        <td><%= fila_puesto.documento %></td>
+        <td><%= fila_puesto.estado %></td>
+        <td><%= l(fila_puesto.hora_estado) if fila_puesto.hora_estado.present? %> </td>
+        <td><%= fila_puesto.avisos %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+<%= link_to 'New Fila Puesto', new_fila_puesto_path %>

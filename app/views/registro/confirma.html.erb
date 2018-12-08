@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+<p>
+  <strong>Fecha:</strong>
+  <%= @fila_puesto.fecha %>
+</p>
+<p>
+  <strong>Hora:</strong>
+  <%= @fila_puesto.hora %>
+</p>
+<p>
+  <strong>Cola:</strong>
+  <%= @fila_puesto.fila.nombre %>
+</p>
+<p>
+  <strong>Numero:</strong>
+  <%= @fila_puesto.numero %>
+</p>
+<p>
+  <strong>Documento:</strong>
+  <%= @fila_puesto.documento %>
+</p>
+
+<%= link_to 'Registro', registro_path %>

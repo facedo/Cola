@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @puesto.nombre %>
+</p>
+
+<p>
+  <strong>Rotulo:</strong>
+  <%= @puesto.rotulo %>
+</p>
+
+<p>
+  <strong>Fila:</strong>
+  <%= @nbsig %>
+</p>
+
+<%= link_to 'Edit', edit_puesto_path(@puesto) %> |
+<%= link_to 'Back', puestos_path %>

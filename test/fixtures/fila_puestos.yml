@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  fecha: 2018-11-25
+  hora: 2018-11-25 13:07:03
+  numero: 1
+  documento: 1
+  estado: MyString
+  hora_estado: 2018-11-25 13:07:03
+  avisos: 1
+  fila: one
+  puesto: one
+
+two:
+  fecha: 2018-11-25
+  hora: 2018-11-25 13:07:03
+  numero: 1
+  documento: 1
+  estado: MyString
+  hora_estado: 2018-11-25 13:07:03
+  avisos: 1
+  fila: two
+  puesto: two

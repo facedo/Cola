@@ -1,0 +1,47 @@
+<%= form_with(model: fila, local: true) do |form| %>
+  <% if fila.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(fila.errors.count, "error") %> prohibited this fila from being saved:</h2>
+
+      <ul>
+      <% fila.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :numero %>
+    <%= form.number_field :numero %>
+  </div>
+
+  <div class="field">
+    <%= form.label :nombre %>
+    <%= form.text_field :nombre %>
+  </div>
+
+  <div class="field">
+    <%= form.label :siglas %>
+    <%= form.text_field :siglas %>
+  </div>
+
+  <div class="field">
+    <%= form.label :max_avisos %>
+    <%= form.number_field :max_avisos %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ult_num %>
+    <%= form.number_field :ult_num %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fe_ult_num %>
+    <%= form.date_field :fe_ult_num %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
