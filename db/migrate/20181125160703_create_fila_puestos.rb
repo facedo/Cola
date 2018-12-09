@@ -4,7 +4,7 @@ class CreateFilaPuestos < ActiveRecord::Migration[5.2]
       t.date :fecha
       t.time :hora
       t.integer :numero, limit: 5
-      t.integer :documento, limit: 10
+      t.integer :documento
       t.string :estado
       t.time :hora_estado
       t.integer :avisos, limit: 2
