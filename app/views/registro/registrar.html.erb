@@ -3,7 +3,7 @@
 <%= form_tag({controller: "registro", action: "confirma"}, method: "get", class: "nifty_form") do %>
   <div class="field">
     <%= label_tag(:fila_id, "Cola de espera:") %>
-    <%= select_tag(:fila_id,options_from_collection_for_select(Fila.all, :id, :nombre)) %>
+    <%= select_tag(:fila_id,options_from_collection_for_select(Fila.order(:nombre), :id, :nombre)) %>
   </div>
   <div class="field">
     <%= label_tag :documento %>

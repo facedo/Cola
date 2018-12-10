@@ -4,22 +4,20 @@
 <table>
   <thead>
     <tr>
-      <th>Fecha</th>
-      <th>Hora</th>
       <th>Fila</th>
-      <th>Puesto</th>
       <th>Numero</th>
+      <th>Hora</th>
       <th>Documento</th>
       <th>Estado</th>
       <th>Hora estado</th>
       <th>Avisos</th>
+      <th>Taquilla</th>
     </tr>
   </thead>
 
   <tbody>
     <% @fila_puestos.each do |fila_puesto| %>
       <tr>
-        <td><%= l(fila_puesto.fecha) %></td>
         <td><%= l(fila_puesto.hora) %></td>
         <td><%= fila_puesto.fila.nombre %></td>
         <td><% if fila_puesto.puesto.nil? then %>
@@ -34,7 +32,7 @@
         <td><%= fila_puesto.avisos %></td>
       </tr>
     <% end %>
+    <meta http-equiv="refresh" content="15" >
   </tbody>
 </table>
 <br>
-<%= link_to 'New Fila Puesto', new_fila_puesto_path %>

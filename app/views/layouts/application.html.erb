@@ -33,6 +33,9 @@
             <%= link_to 'Monitor', monitor_index_path %> 
           </li>
           <li class="col-md">
+            <%= link_to 'Atender', atender_index_path %> 
+          </li>
+          <li class="col-md">
             <%= link_to 'Configurar', configurar_index_path %> 
           </li>
           <li class="col-md">
@@ -41,6 +44,8 @@
         </ul>
       </nav>
     </header>
+    <div class="cuerpobase">
       <%= yield %>
+    </div>
   </body>
 </html>

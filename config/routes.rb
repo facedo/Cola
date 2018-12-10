@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  get 'atender/index'
   root "inicio#index"
   get "inicio/index"
 

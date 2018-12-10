@@ -1,0 +1,2 @@
+module AtenderHelper
+end
