@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get "registro/index"
   get "registro/new"
   get "registro/registrar"
+  get "registro/confirma"
   post "registro/create"
   get "registro/show"
   get 'salir/index'

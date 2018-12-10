@@ -1,16 +1,16 @@
 <h1>Registro en Cola</h1>
 
-<%= form_tag({controller: "registro", action: "registrar"}, method: "get", class: "nifty_form") do |form| %>
+<%= form_tag({controller: "registro", action: "confirma"}, method: "get", class: "nifty_form") do %>
   <div class="field">
-    <%= form.label_tag :cola %>
-    <%= form.collection_select_tag(:fila_id, Fila.all, :id, :nombre) %>
+    <%= label_tag(:fila_id, "Cola de espera:") %>
+    <%= select_tag(:fila_id,options_from_collection_for_select(Fila.all, :id, :nombre)) %>
   </div>
   <div class="field">
-    <%= form.label_tag :documento %>
-    <%= form.number_field_tag :documento %>
+    <%= label_tag :documento %>
+    <%= number_field_tag :documento %>
   </div>
   <div class="actions">
-    <%= form.submit_tag %>
+    <%= submit_tag  "Registrarse" %>
   </div>
 <% end %>
 
