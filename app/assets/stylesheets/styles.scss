@@ -43,7 +43,56 @@ a,a:visited{
   		background-color: #111;
   	}
 }
+.submenu1{
+  color: white;
+  background-color: darkgreen;
+  ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+  li {
+      float: left;
+    }
+  a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 8px 8px;
+      text-decoration: none;
+      font-size: 100%;
+    }
+  .subtitulo {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 8px 6px;
+      background-color: brown;
+      text-decoration: none;
+      font-size: 110%;
+      }
+  a:hover {
+      background-color: #111;
+    }
+}
 .alerta {
   color: red;
-  font-size: 150%
+  font-size: 150%;
+}
+.mensaje{
+  color: brown;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 130%;
+}
+.fila_puesto_Proceso{
+  color: brown;
+  font-weight: bold;
+}
+.fila_puesto_Nulo{
+  color: gray;
+}
+.fila_puesto_Espera{
+  color: darkblue;
 }

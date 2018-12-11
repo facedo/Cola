@@ -1,10 +1,36 @@
-<h1><%= "Atendiendo la cola #{@fila.numero} - #{@fila.nombre}(#{@fila.siglas})" %></h1>
+
+<nav class="submenu1">
+  <ul>
+    <li class="subtitulo">
+      <%= "#{@taquilla.rotulo}: Atendiendo la cola #{@fila.siglas} - #{@fila.nombre}" %>
+    </li>
+    <li class="col-md">
+      <%= link_to 'Refrescar', atender_index_path %>
+    </li>
+    <li class="col-md">
+      <%= link_to 'Siguiente', atender_siguiente_path %>
+    </li>
+    <li class="col-md">
+      <%= link_to 'Atendido', atender_atendido_path %>
+    </li>
+    <li class="col-md">
+      <%= link_to 'Cancelar', atender_cancelar_path %>
+    </li>
+  </ul>
+</nav>
+<p class="mensaje">
+  <% if @llamado.present? %>
+    <%= "Atendiendo el número: #{@llamado.numero}, documento: #{@llamado.documento}, llamada: #{@llamado.avisos} ..." %>
+  <% else %>
+    <%= "No está atendiendo en este momento..." %>
+  <% end %>
+</p>
 
 <table>
   <thead>
     <tr>
-      <th>Fila</th>
-      <th>Numero</th>
+      <th>Cola</th>
+      <th>Número</th>
       <th>Hora</th>
       <th>Documento</th>
       <th>Estado</th>
@@ -16,7 +42,7 @@
 
   <tbody>
     <% @fila_puestos.each do |fila_puesto| %>
-      <tr>
+      <tr class="fila_puesto_<%=fila_puesto.estado %>" >
         <td><%= fila_puesto.fila.numero %></td>
         <td><%= fila_puesto.numero %></td>
         <td><%= l(fila_puesto.hora) %></td>
@@ -34,4 +60,3 @@
   </tbody>
 </table>
 <br>
-<% link_to 'New Fila Puesto', new_fila_puesto_path %>

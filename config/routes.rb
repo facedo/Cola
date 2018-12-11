@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   
   get 'atender/index'
+  get 'atender/siguiente'
+  get 'atender/atendido'
+  get 'atender/cancelar'
   root "inicio#index"
   get "inicio/index"
 
