@@ -1,2 +1,37 @@
-<h1>Atender#index</h1>
-<p>Find me in app/views/atender/index.html.erb</p>
+<h1><%= "Atendiendo la cola #{@fila.numero} - #{@fila.nombre}(#{@fila.siglas})" %></h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Fila</th>
+      <th>Numero</th>
+      <th>Hora</th>
+      <th>Documento</th>
+      <th>Estado</th>
+      <th>Hora estado</th>
+      <th>Avisos</th>
+      <th>Taquilla</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @fila_puestos.each do |fila_puesto| %>
+      <tr>
+        <td><%= fila_puesto.fila.numero %></td>
+        <td><%= fila_puesto.numero %></td>
+        <td><%= l(fila_puesto.hora) %></td>
+        <td><%= fila_puesto.documento %></td>
+        <td><%= fila_puesto.estado %></td>
+        <td><%= l(fila_puesto.hora_estado) if fila_puesto.hora_estado.present? %> </td>
+        <td><%= fila_puesto.avisos %></td>
+        <td><% if fila_puesto.puesto.nil? then %>
+            <%=  "No asignado" %>
+            <% else %>
+            <%=  fila_puesto.puesto.rotulo %>
+            <% end %> </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+<% link_to 'New Fila Puesto', new_fila_puesto_path %>
