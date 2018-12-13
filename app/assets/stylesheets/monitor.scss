@@ -3,21 +3,15 @@
 	background-color: white;
   margin-bottom: 10;
   .en_proceso{
-    color: darkblue;
-    .encab{
+    font-size: 120%;
+    .encab_proceso{
+      color: darkblue;
       padding: 2px;
       font-weight: bold;
     }
-    .alerta2{
-      color: darkorange;
-    }
-    .alerta3{
-      color: darkred;
-    }
   }
   .en_espera{
-    color: black;
-    .encab{
+    .encab_espera{
       padding: 2px;
       font-weight: bold;
     }

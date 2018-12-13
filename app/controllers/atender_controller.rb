@@ -1,9 +1,22 @@
 class AtenderController < ApplicationController
-  before_action :pone_variables
+  
+  before_action :pone_variables, only: [:siguiente, :atendido, :cancelar] 
 
   def index
-  	$nom_mod = "Atender"
+  	$nom_mod ||= "Atender"
+ #   $puesto_atender_id ||= 0
+ #   if $puesto_atender_id == 0
+      $puesto_atender_id = params[:puesto_id]
+ #   end
+    pone_variables
   end
+
+  def pide_datos
+  end
+
+#  def configura
+#    $puesto_atender_id = params[:puesto_id]
+#  end
 
   def siguiente
   	actualiza_atendido
@@ -42,10 +55,10 @@ class AtenderController < ApplicationController
 
 	def pone_variables
 	  $ult_num ||= 0
-	  @taquilla = Puesto.find(1)
-  	  @fila = Fila.find(1)
-  	  @fila_puestos = @fila.fila_puestos.where(fecha: Date.today)
-  	  @llamado = @fila_puestos.where(puesto: @taquilla.id, estado: "Proceso").take
+	  @taquilla = Puesto.find($puesto_atender_id)
+  	@fila = Fila.find(@taquilla.fila_id)
+  	@fila_puestos = @fila.fila_puestos.where(fecha: Date.today)
+  	@llamado = @fila_puestos.where(puesto: @taquilla.id, estado: "Proceso").take
 	end
 	
 	def actualiza_atendido

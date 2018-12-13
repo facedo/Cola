@@ -1,7 +1,7 @@
 
-<div class="monitor">
-<div class "en_proceso">
-<h3 class= "encab"> Personas en Proceso </h3>
+<div class= "monitor">
+<div class= "en_proceso">
+<h3 class= "encab_proceso"> Personas en Proceso </h3>
 <table>
   <thead>
     <tr>
@@ -19,15 +19,15 @@
         <td><%= enproc.puesto.rotulo %> </td>
         <td><%= enproc.numero %></td>
         <td><%= enproc.documento %></td>
-        <td class= "alerta"{<%= enproc.avisos %>}><%= enproc.avisos %></td>
+        <td><%= enproc.avisos %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 </div>
 
-<div class "en_espera">
-<h3 class= "encab"> Personas en Espera </h3>
+<div class= "en_espera">
+<h3 class= "encab_espera"> Personas en Espera </h3>
 <table>
   <thead>
     <tr>

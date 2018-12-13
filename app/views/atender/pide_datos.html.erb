@@ -1,0 +1,12 @@
+<h1>Datos para la atención en Cola</h1>
+
+<%= form_tag({controller: "atender", action: "index"}, method: "get", class: "nifty_form") do %>
+  <div class="field">
+    <%= label_tag(:puesto_id, "Taquilla de atención:") %>
+    <%= select_tag(:puesto_id,options_from_collection_for_select(Puesto.order(:nombre), :id, :nombre)) %>
+  </div>
+  <div class="actions">
+    <%= submit_tag  "Confirmar" %>
+  </div>
+<% end %>
+
