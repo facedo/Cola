@@ -1,0 +1,53 @@
+.monitor{
+	color: black;
+	background-color: white;
+  margin-bottom: 10;
+  .en_proceso{
+    color: darkblue;
+    .encab{
+      padding: 2px;
+      font-weight: bold;
+    }
+    .alerta2{
+      color: darkorange;
+    }
+    .alerta3{
+      color: darkred;
+    }
+  }
+  .en_espera{
+    color: black;
+    .encab{
+      padding: 2px;
+      font-weight: bold;
+    }
+  }
+	.lista {
+      width: 20%;
+      height: 100%;
+    	list-style-type: none;
+      margin: 0;
+      padding: 0;
+      border:  5px;
+      border-style: solid;
+      border-color: steelblue;
+      font-size: 150%;
+      display: block;
+  	}
+  li {
+      padding: 2px;
+  	}
+  .encab{
+      padding: 2px;
+      font-weight: bold;
+      color: darkblue;
+    }
+  .media{
+    width: 30%;
+    margin-left: 25%;
+    padding: 2px 3px;
+    border:  5px;
+    border-style: solid;
+    border-color: steelblue;
+  }
+}
